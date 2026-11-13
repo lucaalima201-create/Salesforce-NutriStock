@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Definir_como_Baixo_Estoque</name>
+        <label>Definir como Baixo Estoque</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Estatus_de_Estoque__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Baixo Estoque</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Definir_como_Esgotado</name>
+        <label>Definir como Esgotado</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Estatus_de_Estoque__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Esgotado</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Definir_como_Normal</name>
+        <label>Definir como Normal</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Estatus_de_Estoque__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Normal</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Verificar_Status_do_Estoque</name>
+        <label>Verificar Status do Estoque</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Definir_como_Normal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Resultado padrão</defaultConnectorLabel>
+        <rules>
+            <name>Esgotado</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Quantidade_em_Estoque__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Definir_como_Esgotado</targetReference>
+            </connector>
+            <label>Esgotado</label>
+        </rules>
+        <rules>
+            <name>Baixo_Estoque</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Quantidade_em_Estoque__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Estoque_Minimo__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Definir_como_Baixo_Estoque</targetReference>
+            </connector>
+            <label>Baixo Estoque</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Atualizar Status do Estoque {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Atualizar Status do Estoque</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Verificar_Status_do_Estoque</targetReference>
+        </connector>
+        <object>Product2</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

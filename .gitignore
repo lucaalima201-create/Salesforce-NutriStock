@@ -1,0 +1,82 @@
+﻿# Salesforce CLI local state and authentication
+.sf/
+.sfdx/
+.localdevserver/
+authFiles/
+**/authFiles/
+deploy-options.json
+*.sfdx
+*.token
+*.jwt
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Recovery copies, archives, backups and temporary files
+recovery/
+**/recovery/
+*.zip
+*.bak
+*.backup
+*.old
+*~
+*.tmp
+*.temp
+
+# Salesforce and development caches
+node_modules/
+coverage/
+.sf/
+.sfdx/
+.localdevserver/
+.eslintcache
+**/lwc/jsconfig.json
+**/__pycache__/
+**/.venv/
+**/venv/
+
+# Logs and generated test output
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test-results/
+
+# Local data exports and databases
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.jsonl
+*.db
+*.sqlite
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Certificates and private key material
+*.crt
+*.cer
+*.p8
+*.asc
+
+# Editor swap, backup and history files
+.history/
+*.swp
+*.swo
+*.swn
+*.orig
+
+

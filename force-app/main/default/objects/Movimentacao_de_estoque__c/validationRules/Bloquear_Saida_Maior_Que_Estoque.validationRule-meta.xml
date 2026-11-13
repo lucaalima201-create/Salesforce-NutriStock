@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bloquear_Saida_Maior_Que_Estoque</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Tipo_de_Movimentacao__c, &quot;Saída&quot;),
+    Quantidade__c &gt; Produto__r.Quantidade_em_Estoque__c
+)</errorConditionFormula>
+    <errorDisplayField>Tipo_de_Movimentacao__c</errorDisplayField>
+    <errorMessage>Não é possível realizar a saída. Quantidade maior que o estoque disponível.</errorMessage>
+</ValidationRule>

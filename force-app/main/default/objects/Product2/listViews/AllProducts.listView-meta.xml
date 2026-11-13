@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllProducts</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Categoria_do_produto__c</columns>
+    <columns>Preco_de_Venda__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Categoria_do_produto__c</field>
+        <operation>equals</operation>
+        <value>Suplemento,Vitamina,Produto Natural,Chá,Snack_Saudável,Bebida,Cosmético</value>
+    </filters>
+    <label>Todos os produtos</label>
+</ListView>

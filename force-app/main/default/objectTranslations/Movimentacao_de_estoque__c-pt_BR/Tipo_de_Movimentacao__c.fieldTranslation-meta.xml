@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tipo de Movimentação --></label>
+    <name>Tipo_de_Movimentacao__c</name>
+    <picklistValues>
+        <masterLabel>Entrada</masterLabel>
+        <translation><!-- Entrada --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saída</masterLabel>
+        <translation><!-- Saída --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

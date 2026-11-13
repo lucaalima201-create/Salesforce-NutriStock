@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status do Lote --></label>
+    <name>Status_do_Lote__c</name>
+    <picklistValues>
+        <masterLabel>Próximo do Vencimento</masterLabel>
+        <translation><!-- Próximo do Vencimento --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vencido</masterLabel>
+        <translation><!-- Vencido --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Válido</masterLabel>
+        <translation><!-- Válido --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Movimentação de estoque</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Movimentações de estoques</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <validationRules>
+        <errorMessage><!-- Não é possível realizar a saída. Quantidade maior que o estoque disponível. --></errorMessage>
+        <name>Bloquear_Saida_Maior_Que_Estoque</name>
+    </validationRules>
+</CustomObjectTranslation>
